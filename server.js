@@ -34,9 +34,17 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.render('home', {
-    title : 'homepage',
+    title : 'express app',
     pageTitle : 'this is my home page',
     welcomeMessage : ' welcome to my fun website',
+    currentYear : new Date().getFullYear()
+  });
+});
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+    title : 'express-app',
+    pageTitle : 'projects',
+    welcomeMessage : 'these are my projects',
     currentYear : new Date().getFullYear()
   });
 });
